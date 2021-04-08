@@ -5,6 +5,7 @@
 package gin
 
 import (
+	"log"
 	"fmt"
 	"io"
 	"net/http"
@@ -265,7 +266,8 @@ func LoggerWithConfig(conf LoggerConfig) HandlerFunc {
 
 			param.Path = path
 
-			fmt.Fprint(out, formatter(param))
+			log.Printf(formatter(param))
+			// fmt.Fprint(out, formatter(param))
 		}
 	}
 }
